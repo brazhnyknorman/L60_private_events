@@ -1,7 +1,8 @@
 <div id="<%= dom_id event %>">
   <p>
     <h3><strong><%= event.title %></strong></h3>
-    <h4>Posted by <%= post.user.name %> </h4>
+    <!-- <h4>Posted by <%= event.creator.name %> </h4> -->
+    <h4>Posted by <%= link_to "#{event.creator.name}", user_path(event.creator) %> </h4>
   </p>
 
   <p>
@@ -22,11 +23,6 @@
   <p>
     <strong>Date:</strong>
     <%= event.date %>
-  </p>
-
-  <p>
-    <strong>Views:</strong>
-    <%= event.views %>
   </p>
 
 </div>
