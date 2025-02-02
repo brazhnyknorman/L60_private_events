@@ -3,3 +3,13 @@
 <p>
   Contact: <%= @user.email %> 
 </p>
+
+<div id="events">
+  <% @user.created_events.each do |event| %>
+    <%= render event %>
+    <p>
+      <%= link_to "Show this event", event %>
+    </p>
+    <br>
+  <% end %>
+</div>
