@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: "users/session",
+    registrations: "users/registrations"
+  }
+
+  get "/u/:id", to: "users#profile", as: "user"
+
+
   resources :events
   get "about", to: "pages#about"
 
