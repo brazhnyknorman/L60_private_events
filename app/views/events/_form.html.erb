@@ -22,11 +22,6 @@
   </div>
 
   <div>
-    <%= form.label :views, style: "display: block" %>
-    <%= form.number_field :views %>
-  </div>
-
-  <div>
     <%= form.label :location, style: "display: block" %>
     <%= form.text_field :location %>
   </div>
@@ -35,6 +30,8 @@
     <%= form.label :date, style: "display: block" %>
     <%= form.text_field :date %>
   </div>
+
+  <%= form.hidden_field :creator_id, value: current_user.id %>
 
   <div>
     <%= form.submit %>

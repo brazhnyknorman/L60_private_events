@@ -1,8 +1,8 @@
 <li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Account
-  </a>
   <% if current_user %>
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <%= current_user.name %>
+    </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
       <li class='nav-item'>
         <%= link_to 'Post Event', new_event_path, class:'dropdown-item'%>
@@ -19,6 +19,9 @@
       </li>
     </ul>
   <% else %>
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Account
+    </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
       <li class='nav-item'>
         <%= link_to 'Sign Up', new_user_registration_path, class: 'dropdown-item'%>
