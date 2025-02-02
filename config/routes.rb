@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    sessions: "users/session",
-    registrations: "users/registrations"
-  }
+  devise_for :users, controllers: { registrations: "users/registrations" }
 
   get "/u/:id", to: "users#profile", as: "user"
 
