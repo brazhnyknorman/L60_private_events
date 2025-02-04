@@ -3,7 +3,19 @@
 <div>
   <%= button_to "Attend", attend_event_path(@event), method: :post %> <br>
   
+  <h4>Attendees: </h4> <br>
+  <ul>
+    <% @event.attendees.each do |attendee| %>
+      <li>
+        <%= link_to "#{attendee.name}", user_path(attendee) %>
+      </li>
+    <% end %>
+    <br>
+  </ul>
+  
+</div>
 
+<div>
   <%= link_to "Edit this event", edit_event_path(@event) %> |
   <%= link_to "Back to events", events_path %>
 
