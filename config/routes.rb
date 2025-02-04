@@ -4,7 +4,13 @@ Rails.application.routes.draw do
   get "/u/:id", to: "users#profile", as: "user"
 
 
-  resources :events
+  resources :events do
+    member do
+      post :attend  # This creates a route like POST /events/:id/attend
+    end
+  end
+
+
   get "about", to: "pages#about"
 
   root "pages#home"

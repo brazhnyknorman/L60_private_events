@@ -21,6 +21,19 @@ class EventsController < ApplicationController
   def edit
   end
 
+  def attend
+    @event = Event.find(params[:id])
+
+    if @event.attendees.include?(current_user)
+      flash[:alert] = "You are already attending this event!"
+    else
+      @event.attendees << current_user
+      flash[:notice] = "You are now attending this event!"
+    end
+
+    redirect_to events_path
+  end
+
   # POST /events or /events.json
   def create
     @event = Event.new(event_params)
