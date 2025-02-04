@@ -1,35 +1,37 @@
-<li class="nav-item dropdown">
-  <% if current_user %>
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <%= current_user.name %>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <li class='nav-item'>
-        <%= link_to 'Post Event', new_event_path, class:'dropdown-item'%>
-      </li>
-      <li class='nav-item'>
-        <%= link_to 'My Profile', user_path(current_user), class:'dropdown-item'%>
-      </li>
-      <li class='nav-item'>
-        <%= link_to 'Edit', edit_user_registration_path, class:'dropdown-item'%>
-      </li>
-      <li><hr class="dropdown-divider"></li>
-      <li class='nav-item'>
-        <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class:'dropdown-item'%>
-      </li>
-    </ul>
-  <% else %>
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      Account
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <li class='nav-item'>
-        <%= link_to 'Sign Up', new_user_registration_path, class: 'dropdown-item'%>
-      </li>
-      <li><hr class="dropdown-divider"></li>
-      <li class='nav-item'>
-        <%= link_to 'Log in', new_user_session_path, class:'dropdown-item'%>
-      </li>
-    </ul>
-  <% end %>
-</li>
+<div class="custom-padding">
+  <li class="nav-item dropdown">
+    <% if current_user %>
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <%= current_user.name %>
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li class='nav-item'>
+          <%= link_to 'Post Event', new_event_path, class:'dropdown-item'%>
+        </li>
+        <li class='nav-item'>
+          <%= link_to 'My Profile', user_path(current_user), class:'dropdown-item'%>
+        </li>
+        <li class='nav-item'>
+          <%= link_to 'Edit', edit_user_registration_path, class:'dropdown-item'%>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li class='nav-item'>
+          <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class:'dropdown-item'%>
+        </li>
+      </ul>
+    <% else %>
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Account
+      </a>
+      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li class='nav-item'>
+          <%= link_to 'Sign Up', new_user_registration_path, class: 'dropdown-item'%>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        <li class='nav-item'>
+          <%= link_to 'Log in', new_user_session_path, class:'dropdown-item'%>
+        </li>
+      </ul>
+    <% end %>
+  </li>
+</div>
